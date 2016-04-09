@@ -59,7 +59,11 @@ class Player:
             print 'stack'
             stack = self.get_stack(player)
             print stack
-            return self.win(zaza, small_blind, bets, pot2, stack)
+            print 'tob and count'
+            tob, count = self.get_to_small_blind(game_state)
+            print tob
+            print count
+            return self.win(zaza, small_blind, bets, pot2, stack, tob, count)
         except Exception as e:
             print e
             # traceback.print_exc()
@@ -85,7 +89,7 @@ class Player:
         else:
             return cards[1] + cards[0]
 
-    def win(self, cards_str, small_blind, bets, pot2, stack):
+    def win(self, cards_str, small_blind, bets, pot2, stack, tob, count):
         raised = False
         all_zero_ex_blinds = True
         big_b_25 = small_blind * 2.5 * 2
@@ -95,7 +99,7 @@ class Player:
             if bet > 2 * small_blind:
                 all_zero_ex_blinds = False
 
-        if all_zero_ex_blinds:
+        if all_zero_ex_blinds and count <= 4 and stack > 50 * small_blind * 2:
             return 4 * small_blind
 
         calc_range = self.calc_range(small_blind * 2, stack)
@@ -300,13 +304,23 @@ class Player:
         return False
 
     def get_to_small_blind(self, game_state):
+        small_blind = self.get_small_blind(game_state)
         count = 0
         me_index = 0
         sb_index = 0
 
         for player in game_state['players']:
-            if player['status'] == 'status':
-                pass
+            if player['status'] == 'active':
+                count += 1
+            if player['bet'] == small_blind:
+                sb_index = count
+            if player['name'] == self.NAME or player['name'] == self.VERSION:
+                me_index = count
+
+        if me_index <= sb_index:
+            return sb_index - me_index, count
+        else:
+            return count - sb_index + me_index, count
 
     def get_pot2_or_min(self, game_state):
         pot = game_state['pot'] * 2
