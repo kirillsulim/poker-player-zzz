@@ -1,8 +1,9 @@
-import traceback
+#import traceback
+import sys
 
 
 class Player:
-    VERSION = "zzz-ace"
+    VERSION = "zzz-ace-p"
 
     def get_player(self, game_state, name):
         for player in game_state['players']:
@@ -32,20 +33,22 @@ class Player:
 
     def betRequest(self, game_state):
         try:
+            sys.stdout.write('Sout')
+            sys.stderr.write('Serr')
             print 'a'
-            print game_state
+            print str(game_state)
             print 'me'
             player = self.get_player(game_state, self.VERSION)
-            print player
+            print str(player)
             print 'hand'
             cards = self.get_hand(player)
-            print cards
+            print str(cards)
             zaza = self.as_str(cards)
-            print zaza
+            print str(zaza)
             return self.win(zaza)
         except Exception as e:
             print str(e)
-            traceback.print_exc()
+            # traceback.print_exc()
             return 9999
 
     def showdown(self, game_state):
@@ -63,7 +66,7 @@ class Player:
         if cards_str[0] == 'A':
             return 9999
         else:
-            0
+            return 0
 
 
 
