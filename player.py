@@ -1,6 +1,6 @@
 
 class Player:
-    VERSION = "Default Python folding player"
+    VERSION = "zzz"
 
     def betRequest(self, game_state):
         try:
