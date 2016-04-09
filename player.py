@@ -101,7 +101,7 @@ class Player:
         calc_range = self.calc_range(small_blind * 2, stack)
 
         if raised:
-            if self.hand_in_range(cards_str, 0.5):
+            if self.hand_in_range(cards_str, 0.5 * calc_range):
                 return 9999
             else:
                 return 0
