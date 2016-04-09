@@ -102,7 +102,7 @@ class Player:
         if all_zero_ex_blinds and count <= 4 and stack > 50 * small_blind * 2:
             return 4 * small_blind
 
-        calc_range = self.calc_range(small_blind * 2, stack)
+        calc_range = self.calc_range(small_blind * 2, stack) * self.calc_sb(tob)
 
         if raised:
             if self.hand_in_range(cards_str, 0.5 * calc_range):
@@ -354,6 +354,16 @@ class Player:
         elif stack < 100 * big_blind:
             return base * 2
         return base
+
+    def calc_sb(self, tosb):
+        if tosb == 0:
+            return 7
+        elif 1:
+            return 4
+        elif 2:
+            return 2
+        return 1
+
 
 
 
