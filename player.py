@@ -341,8 +341,8 @@ class Player:
         elif stack < 50 * big_blind:
             return base * 4
         elif stack < 100 * big_blind:
-            return base * 2;
-        return base;
+            return base * 2
+        return base
 
 
 
