@@ -47,7 +47,13 @@ class Player:
             print cards
             zaza = self.as_str(cards)
             print zaza
-            return self.win(zaza)
+            print 'sb'
+            small_blind = self.get_small_blind(game_state)
+            print small_blind
+            print 'bets'
+            bets = self.get_player_bets(game_state)
+            print bets
+            return self.win(zaza, small_blind, bets)
         except Exception as e:
             print e
             # traceback.print_exc()
@@ -55,6 +61,15 @@ class Player:
 
     def showdown(self, game_state):
         pass
+
+    def get_small_blind(self, game_state):
+        return game_state['small_blind']
+
+    def get_player_bets(self, game_state):
+        result = []
+        for player in game_state['players']:
+            result.append(player['bet'])
+        return result
 
     ORDER = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
 
@@ -64,7 +79,13 @@ class Player:
         else:
             return cards[1] + cards[0]
 
-    def win(self, cards_str):
+    def win(self, cards_str, small_blind, bets):
+        raised = False
+        big_b_25 = small_blind * 2.5 * 2
+        for bet in bets:
+            if bet > big_b_25:
+                raised = True
+
         if self.hand_in_range(cards_str, 3):
             return 9999
         else:
