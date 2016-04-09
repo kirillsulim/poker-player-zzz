@@ -4,9 +4,9 @@ class Player:
 
     def betRequest(self, game_state):
         try:
-            return 50
+            return 9999
         except Exception e:
-            print(e)
+            print e
             return 0
 
     def showdown(self, game_state):
