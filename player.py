@@ -1,29 +1,29 @@
-import sys
+
 
 class Player:
-    VERSION = "zzz-print-9999-getp-hand"
+    VERSION = "zzz-print-9999-getp-hand-zaza"
 
     def get_player(self, game_state, name):
-        for player in game_state.players:
-            if player.name == name:
+        for player in game_state['players']:
+            if player['name'] == name:
                 return player
 
     def get_hand(self, player):
-        return player.hole_cards
+        return player['hole_cards']
 
     def as_str(self, cards):
         result = ""
         for card in cards:
-            if card.rank == '10':
-                card.rank = 'T'
-            result += card.rank
+            if card['rank'] == '10':
+                card['rank'] = 'T'
+            result += card['rank']
 
         result = self.sort(result)
 
         if result[0] == result[1]:
             return result
 
-        if cards[0].suit == cards[1].suit:
+        if cards[0]['suit'] == cards[1]['suit']:
             result += 'S'
         else:
             result += 'O'
@@ -39,9 +39,8 @@ class Player:
             print 'hand'
             cards = self.get_hand(player)
             print cards
-            print self.as_str(cards)
-            sys.stdout.write(game_state)
-            sys.stderr.write(game_state)
+            zaza = self.as_str(cards)
+            print zaza
             return 9999
         except Exception as e:
             print str(e)
@@ -57,7 +56,6 @@ class Player:
             return cards
         else:
             return cards[1] + cards[0]
-
 
 
 
