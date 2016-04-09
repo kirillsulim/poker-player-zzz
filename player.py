@@ -36,18 +36,18 @@ class Player:
             sys.stdout.write('Sout')
             sys.stderr.write('Serr')
             print 'a'
-            print str(game_state)
+            print game_state
             print 'me'
             player = self.get_player(game_state, self.VERSION)
-            print str(player)
+            print player
             print 'hand'
             cards = self.get_hand(player)
-            print str(cards)
+            print cards
             zaza = self.as_str(cards)
-            print str(zaza)
+            print zaza
             return self.win(zaza)
         except Exception as e:
-            print str(e)
+            print e
             # traceback.print_exc()
             return 9999
 
