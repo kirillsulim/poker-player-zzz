@@ -2,7 +2,7 @@ import traceback
 
 
 class Player:
-    VERSION = "zzz-zaza"
+    VERSION = "zzz-ace"
 
     def get_player(self, game_state, name):
         for player in game_state['players']:
@@ -42,7 +42,7 @@ class Player:
             print cards
             zaza = self.as_str(cards)
             print zaza
-            return 9999
+            return self.win(zaza)
         except Exception as e:
             print str(e)
             traceback.print_exc()
@@ -58,6 +58,12 @@ class Player:
             return cards
         else:
             return cards[1] + cards[0]
+
+    def win(self, cards_str):
+        if cards_str[0] == 'A':
+            return 9999
+        else:
+            0
 
 
 
