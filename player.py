@@ -1,3 +1,4 @@
+import traceback
 
 
 class Player:
@@ -44,6 +45,7 @@ class Player:
             return 9999
         except Exception as e:
             print str(e)
+            traceback.print_exc()
             return 9999
 
     def showdown(self, game_state):
