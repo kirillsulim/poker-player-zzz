@@ -3,8 +3,12 @@ class Player:
     VERSION = "Default Python folding player"
 
     def betRequest(self, game_state):
-        return 0
+        try:
+            return 50
+        except Exception e:
+            print(e)
+            return 0
 
     def showdown(self, game_state):
-        pass
+        print game_state
 
