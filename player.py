@@ -331,7 +331,6 @@ class Player:
         else:
             return pot
 
-
     def get_sb_player(self, game_state):
         small_b = self.get_small_blind(game_state)
         for player in game_state['players']:
@@ -358,10 +357,10 @@ class Player:
     def calc_sb(self, tosb):
         if tosb == 0:
             return 7
-        elif 1:
+        elif tosb == 1:
             return 4
-        #elif 2:
-         #   return 2
+        elif tosb == 2:
+            return 2
         return 1
 
 
