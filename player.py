@@ -305,7 +305,8 @@ class Player:
         sb_index = 0
 
         for player in game_state['players']:
-            if player['status'] == 'status'
+            if player['status'] == 'status':
+                pass
 
     def get_pot2_or_min(self, game_state):
         pot = game_state['pot'] * 2
