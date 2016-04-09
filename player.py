@@ -1,13 +1,15 @@
 import sys
 
 class Player:
-    VERSION = "zzz"
+    VERSION = "zzz-print"
 
     def betRequest(self, game_state):
         try:
+            print 'a'
+            print game_state
             sys.stdout.write(game_state)
             sys.stderr.write(game_state)
-            return 50
+            return 999
         except Exception:
             return 999
 
