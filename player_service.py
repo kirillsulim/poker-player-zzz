@@ -3,6 +3,7 @@ import cgi
 import json
 import BaseHTTPServer
 import os
+import sys
 from player import Player
 
 
@@ -49,6 +50,7 @@ class PlayerService(BaseHTTPServer.BaseHTTPRequestHandler):
         self.wfile.write(response)
 
 if __name__ == '__main__':
+    print sys.version
     server_class = BaseHTTPServer.HTTPServer
     httpd = server_class((HOST_NAME, PORT_NUMBER), PlayerService)
     print time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER)
