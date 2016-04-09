@@ -2,7 +2,7 @@ import traceback
 
 
 class Player:
-    VERSION = "zzz-print-9999-getp-hand-zaza"
+    VERSION = "zzz-zaza"
 
     def get_player(self, game_state, name):
         for player in game_state['players']:
