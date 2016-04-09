@@ -360,8 +360,8 @@ class Player:
             return 7
         elif 1:
             return 4
-        elif 2:
-            return 2
+        #elif 2:
+         #   return 2
         return 1
 
 
