@@ -31,7 +31,7 @@ class Player:
             result += 'S'
         else:
             result += 'O'
-            return result
+        return result
 
     def betRequest(self, game_state):
         try:
