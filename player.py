@@ -81,15 +81,15 @@ class Player:
 
     def win(self, cards_str, small_blind, bets):
         raised = False
-        all_zero = True
+        all_zero_ex_blinds = True
         big_b_25 = small_blind * 2.5 * 2
         for bet in bets:
             if bet > big_b_25:
                 raised = True
-            if bet != 0:
-                all_zero = False
+            if bet > 2 * small_blind:
+                all_zero_ex_blinds = False
 
-        if all_zero:
+        if all_zero_ex_blinds:
             return 4 * small_blind
 
         if raised:
