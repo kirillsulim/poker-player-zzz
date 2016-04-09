@@ -3,7 +3,6 @@ import cgi
 import json
 import BaseHTTPServer
 import os
-import sys
 from player import Player
 
 
@@ -21,14 +20,11 @@ class PlayerService(BaseHTTPServer.BaseHTTPRequestHandler):
 
         ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
         if ctype == 'multipart/form-data':
-            print ('multipart')
             postvars = cgi.parse_multipart(self.rfile, pdict)
         elif ctype == 'application/x-www-form-urlencoded':
-            print ('www ecn')
             length = int(self.headers.getheader('content-length'))
             postvars = cgi.parse_qs(self.rfile.read(length), keep_blank_values=1)
         else:
-            print ('else')
             postvars = {}
 
         action = postvars['action'][0]
@@ -50,7 +46,6 @@ class PlayerService(BaseHTTPServer.BaseHTTPRequestHandler):
         self.wfile.write(response)
 
 if __name__ == '__main__':
-    print (sys.version)
     server_class = BaseHTTPServer.HTTPServer
     httpd = server_class((HOST_NAME, PORT_NUMBER), PlayerService)
     print (time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER))
