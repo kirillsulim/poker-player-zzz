@@ -56,7 +56,10 @@ class Player:
             print 'raise'
             pot2 = self.get_pot2_or_min(game_state)
             print pot2
-            return self.win(zaza, small_blind, bets, pot2)
+            print 'stack'
+            stack = self.get_stack(player)
+            print stack
+            return self.win(zaza, small_blind, bets, pot2, stack)
         except Exception as e:
             print e
             # traceback.print_exc()
@@ -82,7 +85,7 @@ class Player:
         else:
             return cards[1] + cards[0]
 
-    def win(self, cards_str, small_blind, bets, pot2):
+    def win(self, cards_str, small_blind, bets, pot2, stack):
         raised = False
         all_zero_ex_blinds = True
         big_b_25 = small_blind * 2.5 * 2
@@ -95,13 +98,15 @@ class Player:
         if all_zero_ex_blinds:
             return 4 * small_blind
 
+        calc_range = self.calc_range(small_blind * 2, stack)
+
         if raised:
             if self.hand_in_range(cards_str, 0.5):
                 return 9999
             else:
                 return 0
-        elif self.hand_in_range(cards_str, 2):
-            return pot2
+        elif self.hand_in_range(cards_str, calc_range):
+            return 9999
         else:
             return 0
 
@@ -303,11 +308,13 @@ class Player:
 
         if me_id <= sb_p_id:
             return sb_p_id - me_id
+        else:
+            return sb_p_id - me_id + 7
 
     def get_pot2_or_min(self, game_state):
         pot = game_state['pot'] * 2
         min_r = game_state['minimum_raise']
-
+##
         if min_r > pot:
             return min_r
         else:
@@ -320,7 +327,22 @@ class Player:
             if player['bet'] == small_b:
                 return player
 
+    def get_stack(self, player):
+        return player['stack']
 
+    def calc_range(self, big_blind, stack):
+        base = 1
+        if stack < 10 * big_blind:
+            return base * 16
+        elif stack < 20 * big_blind:
+            return base * 9
+        elif stack < 30 * big_blind:
+            return base * 6
+        elif stack < 50 * big_blind:
+            return base * 4
+        elif stack < 100 * big_blind:
+            return base * 2;
+        return base;
 
 
 
