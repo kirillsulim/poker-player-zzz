@@ -95,6 +95,9 @@ class Player:
             if bet > 2 * small_blind:
                 all_zero_ex_blinds = False
 
+        if all_zero_ex_blinds:
+            return 4 * small_blind
+
         calc_range = self.calc_range(small_blind * 2, stack)
 
         if raised:
