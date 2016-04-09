@@ -18,8 +18,9 @@ class Player:
         result = ""
         for card in cards:
             if card['rank'] == '10':
-                card['rank'] = 'T'
-            result += card['rank']
+                result += 'T'
+            else:
+                result += card['rank']
 
         result = self.sort(result)
 
@@ -58,7 +59,7 @@ class Player:
     ORDER = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
 
     def sort(self, cards):
-        if self.ORDER.index(cards[0]) >= self.ORDER.index(cards[1]):
+        if self.ORDER.index(cards[0]) < self.ORDER.index(cards[1]):
             return cards
         else:
             return cards[1] + cards[0]
