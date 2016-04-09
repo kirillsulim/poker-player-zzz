@@ -81,12 +81,23 @@ class Player:
 
     def win(self, cards_str, small_blind, bets):
         raised = False
+        all_zero = True
         big_b_25 = small_blind * 2.5 * 2
         for bet in bets:
             if bet > big_b_25:
                 raised = True
+            if bet != 0:
+                all_zero = False
 
-        if self.hand_in_range(cards_str, 3):
+        if all_zero:
+            return 4 * small_blind
+
+        if raised:
+            if self.hand_in_range(cards_str, 0.5):
+                return 9999
+            else:
+                return 0
+        elif self.hand_in_range(cards_str, 2):
             return 9999
         else:
             return 0
