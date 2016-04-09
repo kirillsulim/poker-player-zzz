@@ -1,120 +1,108 @@
 {
   u
-  'in_action': 4,
+  'pot': 6,
   u
-  'tournament_id': u
-  '56fad97a364b600003000003',
-  u
-  'bet_index': 6,
-  u
-  'orbits': 0,
-  u
-  'current_buy_in': 4,
-  u
-  'game_id': u
-  '5708c4ccdfae7900030000cf',
-  u
-  'small_blind': 2,
+  'community_cards': [],
   u
   'players': [
     {
       u
-      'stack': 0,
-      u
       'status': u
-      'out',
+      'active',
+      u
+      'stack': 1000,
       u
       'version': u
       'Blitz speed withod bounds!',
       u
-      'id': 0,
-      u
       'name': u
       'Blitz',
       u
-      'bet': 0
-    },
-    {
-      u
-      'stack': 1000,
-      u
-      'status': u
-      'folded',
-      u
-      'version': u
-      '2.2',
-      u
-      'id': 1,
-      u
-      'name': u
-      'EnazaTeam',
+      'id': 0,
       u
       'bet': 0
     },
     {
-      u
-      'stack': 0,
-      u
-      'status': u
-      'out',
-      u
-      'version': u
-      'Default Python folding player',
-      u
-      'id': 2,
-      u
-      'name': u
-      'Vostok',
-      u
-      'bet': 0
-    },
-    {
-      u
-      'stack': 990,
       u
       'status': u
       'active',
       u
-      'version': u
-      'checker (no all in)',
+      'stack': 1000,
       u
-      'id': 3,
+      'version': u
+      '2.3.7',
+      u
+      'name': u
+      'EnazaTeam',
+      u
+      'id': 1,
+      u
+      'bet': 0
+    },
+    {
+      u
+      'status': u
+      'active',
+      u
+      'stack': 998,
+      u
+      'version': u
+      'Default Python folding player',
+      u
+      'name': u
+      'Vostok',
+      u
+      'id': 2,
+      u
+      'bet': 2
+    },
+    {
+      u
+      'status': u
+      'active',
+      u
+      'stack': 996,
+      u
+      'version': u
+      'all or nothing (alivecount 23)',
       u
       'name': u
       'Gremlins',
+      u
+      'id': 3,
       u
       'bet': 4
     },
     {
       u
-      'stack': 3010,
-      u
       'status': u
       'active',
       u
+      'id': 4,
+      u
+      'stack': 1000,
+      u
       'version': u
-      'zzz-print-9999',
+      'zzz-ace-p',
       u
       'hole_cards': [
+        {
+          u
+          'rank': u
+          '8',
+          u
+          'suit': u
+          'diamonds'
+        },
         {
           u
           'rank': u
           'A',
           u
           'suit': u
-          'spades'
-        },
-        {
-          u
-          'rank': u
-          '4',
-          u
-          'suit': u
           'clubs'
         }
       ],
-      u
-      'id': 4,
       u
       'name': u
       'zzz',
@@ -123,49 +111,61 @@
     },
     {
       u
-      'stack': 994,
-      u
       'status': u
       'active',
       u
-      'version': u
-      'Air v1',
+      'stack': 1000,
       u
-      'id': 5,
+      'version': u
+      'Air v1.0.2',
       u
       'name': u
       'Air Cubes of Press',
       u
-      'bet': 2
+      'id': 5,
+      u
+      'bet': 0
     },
     {
-      u
-      'stack': 996,
       u
       'status': u
       'active',
       u
+      'stack': 1000,
+      u
       'version': u
       'I LOVE UNICODE',
-      u
-      'id': 6,
       u
       'name': u
       'omskbid666',
       u
-      'bet': 4
+      'id': 6,
+      u
+      'bet': 0
     }
   ],
   u
-  'minimum_raise': 2,
+  'tournament_id': u
+  '56fad97a364b600003000003',
+  u
+  'current_buy_in': 4,
+  u
+  'bet_index': 2,
+  u
+  'small_blind': 2,
+  u
+  'game_id': u
+  '5708d1c4dfae790003000181',
+  u
+  'round': 0,
   u
   'big_blind': 4,
   u
-  'pot': 10,
+  'minimum_raise': 2,
   u
-  'community_cards': [],
+  'dealer': 1,
   u
-  'round': 2,
+  'in_action': 4,
   u
-  'dealer': 4
+  'orbits': 0
 }

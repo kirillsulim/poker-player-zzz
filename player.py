@@ -3,11 +3,12 @@ import sys
 
 
 class Player:
-    VERSION = "zzz-ace-p"
+    VERSION = "zzz-anam"
+    NAME = "zzz"
 
     def get_player(self, game_state, name):
         for player in game_state['players']:
-            if player['name'] == name:
+            if player['name'] == self.VERSION or player['name'] == self.NAME:
                 return player
 
     def get_hand(self, player):
