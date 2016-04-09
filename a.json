@@ -1,0 +1,171 @@
+{
+  u
+  'in_action': 4,
+  u
+  'tournament_id': u
+  '56fad97a364b600003000003',
+  u
+  'bet_index': 6,
+  u
+  'orbits': 0,
+  u
+  'current_buy_in': 4,
+  u
+  'game_id': u
+  '5708c4ccdfae7900030000cf',
+  u
+  'small_blind': 2,
+  u
+  'players': [
+    {
+      u
+      'stack': 0,
+      u
+      'status': u
+      'out',
+      u
+      'version': u
+      'Blitz speed withod bounds!',
+      u
+      'id': 0,
+      u
+      'name': u
+      'Blitz',
+      u
+      'bet': 0
+    },
+    {
+      u
+      'stack': 1000,
+      u
+      'status': u
+      'folded',
+      u
+      'version': u
+      '2.2',
+      u
+      'id': 1,
+      u
+      'name': u
+      'EnazaTeam',
+      u
+      'bet': 0
+    },
+    {
+      u
+      'stack': 0,
+      u
+      'status': u
+      'out',
+      u
+      'version': u
+      'Default Python folding player',
+      u
+      'id': 2,
+      u
+      'name': u
+      'Vostok',
+      u
+      'bet': 0
+    },
+    {
+      u
+      'stack': 990,
+      u
+      'status': u
+      'active',
+      u
+      'version': u
+      'checker (no all in)',
+      u
+      'id': 3,
+      u
+      'name': u
+      'Gremlins',
+      u
+      'bet': 4
+    },
+    {
+      u
+      'stack': 3010,
+      u
+      'status': u
+      'active',
+      u
+      'version': u
+      'zzz-print-9999',
+      u
+      'hole_cards': [
+        {
+          u
+          'rank': u
+          'A',
+          u
+          'suit': u
+          'spades'
+        },
+        {
+          u
+          'rank': u
+          '4',
+          u
+          'suit': u
+          'clubs'
+        }
+      ],
+      u
+      'id': 4,
+      u
+      'name': u
+      'zzz',
+      u
+      'bet': 0
+    },
+    {
+      u
+      'stack': 994,
+      u
+      'status': u
+      'active',
+      u
+      'version': u
+      'Air v1',
+      u
+      'id': 5,
+      u
+      'name': u
+      'Air Cubes of Press',
+      u
+      'bet': 2
+    },
+    {
+      u
+      'stack': 996,
+      u
+      'status': u
+      'active',
+      u
+      'version': u
+      'I LOVE UNICODE',
+      u
+      'id': 6,
+      u
+      'name': u
+      'omskbid666',
+      u
+      'bet': 4
+    }
+  ],
+  u
+  'minimum_raise': 2,
+  u
+  'big_blind': 4,
+  u
+  'pot': 10,
+  u
+  'community_cards': [],
+  u
+  'round': 2,
+  u
+  'dealer': 4
+}
