@@ -53,7 +53,10 @@ class Player:
             print 'bets'
             bets = self.get_player_bets(game_state)
             print bets
-            return self.win(zaza, small_blind, bets)
+            print 'raise'
+            pot2 = self.get_pot2_or_min(game_state)
+            print pot2
+            return self.win(zaza, small_blind, bets, pot2)
         except Exception as e:
             print e
             # traceback.print_exc()
@@ -79,7 +82,7 @@ class Player:
         else:
             return cards[1] + cards[0]
 
-    def win(self, cards_str, small_blind, bets):
+    def win(self, cards_str, small_blind, bets, pot2):
         raised = False
         all_zero_ex_blinds = True
         big_b_25 = small_blind * 2.5 * 2
@@ -98,7 +101,7 @@ class Player:
             else:
                 return 0
         elif self.hand_in_range(cards_str, 2):
-            return 9999
+            return pot2
         else:
             return 0
 
@@ -290,6 +293,32 @@ class Player:
                 i += 4
 
         return False
+
+    def get_to_small_blind(self, game_state):
+        me = self.get_player(self, game_state, None)
+        sb_p = self.get_sb_player(self, game_state)
+
+        me_id = me['id']
+        sb_p_id = sb_p['id']
+
+        if me_id <= sb_p_id:
+            return sb_p_id - me_id
+
+    def get_pot2_or_min(self, game_state):
+        pot = game_state['pot'] * 2
+        min_r = game_state['minimum_raise']
+
+        if min_r > pot:
+            return min_r
+        else:
+            pot
+
+
+    def get_sb_player(self, game_state):
+        small_b = self.get_small_blind(game_state)
+        for player in game_state['players']:
+            if player['bet'] == small_b:
+                return player
 
 
 
