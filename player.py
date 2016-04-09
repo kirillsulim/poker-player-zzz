@@ -95,9 +95,6 @@ class Player:
             if bet > 2 * small_blind:
                 all_zero_ex_blinds = False
 
-        if all_zero_ex_blinds:
-            return 4 * small_blind
-
         calc_range = self.calc_range(small_blind * 2, stack)
 
         if raised:
@@ -300,16 +297,12 @@ class Player:
         return False
 
     def get_to_small_blind(self, game_state):
-        me = self.get_player(self, game_state, None)
-        sb_p = self.get_sb_player(self, game_state)
+        count = 0
+        me_index = 0
+        sb_index = 0
 
-        me_id = me['id']
-        sb_p_id = sb_p['id']
-
-        if me_id <= sb_p_id:
-            return sb_p_id - me_id
-        else:
-            return sb_p_id - me_id + 7
+        for player in game_state['players']:
+            if player['status'] == 'status'
 
     def get_pot2_or_min(self, game_state):
         pot = game_state['pot'] * 2
@@ -318,7 +311,7 @@ class Player:
         if min_r > pot:
             return min_r
         else:
-            pot
+            return pot
 
 
     def get_sb_player(self, game_state):
