@@ -5,7 +5,7 @@ class Player:
     def betRequest(self, game_state):
         try:
             return 9999
-        except Exception e:
+        except Exception as e:
             print e
             return 0
 
